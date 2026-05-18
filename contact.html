@@ -1,178 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact | The Greenwood Tavern</title>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --bg: #0d1117;
-      --surface: #111820;
-      --gold: #8b7355;
-      --muted: rgba(255,255,255,0.5);
-      --faint: rgba(255,255,255,0.25);
-      --light: #f0ebe3;
-    }
-    body { background: var(--bg); color: var(--light); font-family: 'Georgia', serif; }
-    nav {
-      position: fixed; top: 0; width: 100%; z-index: 100;
-      background: rgba(13,17,23,0.97);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(139,115,85,0.2);
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 48px; height: 68px;
-    }
-    .nav-logo a { display: inline-block; line-height: 0; }
-    .nav-logo img { height: 42px; }
-    .nav-links { display: flex; gap: 36px; list-style: none; align-items: center; }
-    .nav-links a {
-      color: rgba(255,255,255,0.5);
-      text-decoration: none;
-      font-family: 'Arial', sans-serif;
-      font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: #8b7355; }
-    .nav-email { font-family: 'Arial', sans-serif; font-size: 11px; letter-spacing: 1px; color: rgba(255,255,255,0.25); }
-    @media (max-width: 700px) {
-      nav { padding: 0 20px; }
-      .nav-email { display: none; }
-      .nav-links { gap: 20px; }
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | The Greenwood Tavern</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --dark:#0a1a14;
+  --darker:#060e0a;
+  --darkest:#040608;
+  --green:#8fc9a0;
+  --green-muted:#7aad8a;
+  --green-dim:#6a9a78;
+  --text:#c8d8c0;
+  --text-dim:#8aaa90;
+  --pink:#c9a0c4;
+  --pink-border:#8a5a88;
+  --blue:#4a7aaa;
+  --blue-light:#7aaacc;
+  --border-green:#1a3a25;
+  --border-purple:#2a1a2a;
+  --font-head:'Playfair Display',Georgia,serif;
+  --font-body:'Lato',sans-serif;
+}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-body);background:var(--dark);color:var(--text);min-height:100vh;}
 
-    .page-wrap { padding-top: 68px; }
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 40px;background:rgba(4,6,8,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border-green);position:fixed;top:0;width:100%;z-index:100;position:relative;}
+.nav-logo img{height:52px;width:auto;}
+.nav-links{display:flex;gap:32px;position:absolute;left:50%;transform:translateX(-50%);}
+.nav-links a{font-family:var(--font-head);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--text-dim);text-decoration:none;transition:color 0.3s;}
+.nav-links a:hover{color:var(--pink);}
+.nav-contact a{font-family:var(--font-body);font-size:11px;letter-spacing:1px;color:#4a7a5a;text-decoration:none;transition:color 0.3s;}
+.nav-contact a:hover{color:var(--green);}
 
-    .page-hero {
-      padding: 80px 48px 60px;
-      max-width: 1100px;
-      margin: 0 auto;
-      border-bottom: 1px solid rgba(139,115,85,0.15);
-    }
-    .page-eyebrow {
-      font-family: 'Arial', sans-serif;
-      font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 16px;
-    }
-    .page-hero h1 {
-      font-size: clamp(32px, 5vw, 56px);
-      font-weight: normal; color: #fff; line-height: 1.1; margin-bottom: 12px;
-    }
-    .page-hero p {
-      font-size: 16px; color: var(--muted); font-style: italic; max-width: 500px;
-    }
+.page-wrap{padding-top:82px;}
 
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    .contact-panel {
-      padding: 64px 48px;
-      border-bottom: 1px solid rgba(139,115,85,0.15);
-    }
-    .contact-panel:first-child {
-      border-right: 1px solid rgba(139,115,85,0.15);
-    }
-    .panel-label {
-      font-family: 'Arial', sans-serif;
-      font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 20px;
-    }
-    .contact-panel h2 {
-      font-size: clamp(20px, 3vw, 28px);
-      font-weight: normal; color: #fff; line-height: 1.25; margin-bottom: 16px;
-    }
-    .contact-panel p {
-      font-size: 15px; color: var(--muted);
-      line-height: 1.8; font-style: italic;
-      margin-bottom: 36px; max-width: 380px;
-    }
-    .btn-contact {
-      display: inline-block;
-      background: var(--gold); color: #0d1117;
-      font-family: 'Arial', sans-serif;
-      font-size: 12px; font-weight: bold;
-      letter-spacing: 2px; text-transform: uppercase;
-      text-decoration: none;
-      padding: 16px 36px;
-      transition: background 0.2s, transform 0.15s;
-    }
-    .btn-contact:hover { background: #a08965; transform: translateY(-1px); }
-    .btn-note {
-      display: block; margin-top: 14px;
-      font-family: 'Arial', sans-serif; font-size: 11px;
-      color: rgba(255,255,255,0.2); letter-spacing: 0.5px;
-    }
-    .btn-note a { color: rgba(255,255,255,0.3); text-decoration: none; }
-    .btn-note a:hover { color: var(--gold); }
+.page-hero{
+  padding:60px 48px 48px;
+  max-width:1100px;
+  margin:0 auto;
+  border-bottom:1px solid var(--border-green);
+}
+.page-eyebrow{
+  font-family:var(--font-body);
+  font-size:10px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:var(--green-dim);
+  margin-bottom:14px;
+}
+.page-hero h1{
+  font-family:var(--font-head);
+  font-size:clamp(32px,5vw,52px);
+  font-weight:normal;
+  color:var(--text);
+  line-height:1.1;
+  margin-bottom:10px;
+}
+.page-hero p{
+  font-size:15px;
+  color:var(--text-dim);
+  font-style:italic;
+  max-width:500px;
+}
 
-    footer {
-      background: var(--bg);
-      border-top: 1px solid rgba(139,115,85,0.15);
-      padding: 48px 40px; text-align: center;
-    }
-    .footer-links { display: flex; gap: 24px; justify-content: center; margin-bottom: 16px; flex-wrap: wrap; }
-    .footer-links a {
-      font-family: 'Arial', sans-serif; font-size: 11px;
-      letter-spacing: 1.5px; text-transform: uppercase;
-      color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.2s;
-    }
-    .footer-links a:hover { color: #8b7355; }
-    .footer-copy { font-family: 'Arial', sans-serif; font-size: 11px; color: rgba(255,255,255,0.2); margin-bottom: 8px; }
-    .footer-warning { font-family: 'Arial', sans-serif; font-size: 10px; letter-spacing: 1px; color: rgba(255,255,255,0.12); }
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  max-width:1100px;
+  margin:0 auto;
+}
+.contact-panel{
+  padding:56px 48px;
+  border-bottom:1px solid var(--border-green);
+}
+.contact-panel:first-child{
+  border-right:1px solid var(--border-green);
+}
+.panel-label{
+  font-family:var(--font-body);
+  font-size:10px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:var(--green-dim);
+  margin-bottom:18px;
+}
+.contact-panel h2{
+  font-family:var(--font-head);
+  font-size:clamp(20px,3vw,28px);
+  font-weight:normal;
+  color:var(--text);
+  line-height:1.25;
+  margin-bottom:14px;
+}
+.contact-panel p{
+  font-size:14px;
+  color:var(--text-dim);
+  line-height:1.8;
+  font-style:italic;
+  margin-bottom:32px;
+  max-width:380px;
+}
+.btn-contact{
+  display:inline-block;
+  border:1px solid var(--border-green);
+  background:transparent;
+  color:var(--text);
+  font-family:var(--font-head);
+  font-size:11px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  text-decoration:none;
+  padding:14px 32px;
+  transition:background 0.3s,color 0.3s,border-color 0.3s;
+}
+.btn-contact:hover{
+  background:var(--green-dim);
+  border-color:var(--green-dim);
+  color:var(--darkest);
+}
+.btn-note{
+  display:block;
+  margin-top:12px;
+  font-family:var(--font-body);
+  font-size:11px;
+  color:rgba(200,216,192,0.25);
+  letter-spacing:0.5px;
+}
+.btn-note a{color:rgba(200,216,192,0.35);text-decoration:none;}
+.btn-note a:hover{color:var(--green);}
 
-    @media (max-width: 700px) {
-      .page-hero { padding: 60px 24px 40px; }
-      .contact-grid { grid-template-columns: 1fr; }
-      .contact-panel { padding: 48px 24px; }
-      .contact-panel:first-child { border-right: none; border-bottom: 1px solid rgba(139,115,85,0.15); }
-    }
-  </style>
+footer{
+  background:var(--darkest);
+  border-top:1px solid var(--border-green);
+  padding:40px;
+  text-align:center;
+}
+.footer-links{display:flex;gap:24px;justify-content:center;margin-bottom:14px;flex-wrap:wrap;}
+.footer-links a{
+  font-family:var(--font-body);
+  font-size:11px;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  color:rgba(200,216,192,0.3);
+  text-decoration:none;
+  transition:color 0.2s;
+}
+.footer-links a:hover{color:var(--green);}
+.footer-copy{font-family:var(--font-body);font-size:11px;color:rgba(200,216,192,0.18);margin-bottom:6px;}
+.footer-warning{font-family:var(--font-body);font-size:10px;letter-spacing:1px;color:rgba(200,216,192,0.1);}
+
+@media(max-width:700px){
+  .nav{padding:12px 20px;}
+  .nav-contact{display:none;}
+  .page-hero{padding:48px 24px 36px;}
+  .contact-grid{grid-template-columns:1fr;}
+  .contact-panel{padding:40px 24px;}
+  .contact-panel:first-child{border-right:none;border-bottom:1px solid var(--border-green);}
+}
+</style>
 </head>
 <body>
 
-  <nav>
-    <div class="nav-logo">
-      <a href="index.html"><img src="tgt-logo.png" alt="The Greenwood Tavern"></a>
+<nav class="nav">
+  <div class="nav-logo">
+    <a href="index.html"><img src="tgt-logo.png" alt="The Greenwood Tavern"></a>
+  </div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="catering.html">Catering</a>
+    <a href="jobs.html">Jobs</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div class="nav-contact">
+    <a href="mailto:info@thegreenwoodtavern.com">info@thegreenwoodtavern.com</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="page-hero">
+    <div class="page-eyebrow">Get In Touch</div>
+    <h1>Contact Us</h1>
+    <p>We're easy to reach — and the lake is always listening.</p>
+  </div>
+
+  <div class="contact-grid">
+
+    <div class="contact-panel">
+      <div class="panel-label">General Inquiries</div>
+      <h2>Send us a message</h2>
+      <p>Questions about reservations, private events, or anything else — we'd love to hear from you.</p>
+      <a href="mailto:info@thegreenwoodtavern.com" class="btn-contact">Email Us &rarr;</a>
+      <span class="btn-note">Opens your email app &middot; <a href="mailto:info@thegreenwoodtavern.com">info@thegreenwoodtavern.com</a></span>
     </div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="catering.html">Catering</a></li>
-      <li><a href="jobs.html">Jobs</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <span class="nav-email">info@thegreenwoodtavern.com</span>
-  </nav>
 
-  <div class="page-wrap">
-
-    <div class="page-hero">
-      <div class="page-eyebrow">Get In Touch</div>
-      <h1>Contact Us</h1>
-      <p>We're easy to reach — and the lake is always listening.</p>
+    <div class="contact-panel">
+      <div class="panel-label">Performers &amp; Artists</div>
+      <h2>Looking to perform at The Greenwood Tavern?</h2>
+      <p>We're always looking for great talent — bands, solo artists, DJs, comics, trivia hosts and more. Fill out our performer inquiry form and we'll be in touch.</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdRKe1-udjmJFnmN7UmFEYjItDyAxFDuQjC9-ygdkiulyqNqQ/viewform?usp=header" class="btn-contact" target="_blank" rel="noopener">Submit Your Info &rarr;</a>
+      <span class="btn-note">Opens a short form &middot; Takes about 3 minutes</span>
     </div>
 
-    <div class="contact-grid">
-
-      <div class="contact-panel">
-        <div class="panel-label">General Inquiries</div>
-        <h2>Send us a message</h2>
-        <p>Questions about reservations, private events, or anything else — we'd love to hear from you.</p>
-        <a href="mailto:info@thegreenwoodtavern.com" class="btn-contact">Email Us &rarr;</a>
-        <span class="btn-note">Opens your email app &middot; <a href="mailto:info@thegreenwoodtavern.com">info@thegreenwoodtavern.com</a></span>
-      </div>
-
-      <div class="contact-panel">
-        <div class="panel-label">Performers &amp; Artists</div>
-        <h2>Looking to perform at The Greenwood Tavern?</h2>
-        <p>We're always looking for great talent — bands, solo artists, DJs, comics, trivia hosts and more. Fill out our performer inquiry form and we'll be in touch.</p>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdRKe1-udjmJFnmN7UmFEYjItDyAxFDuQjC9-ygdkiulyqNqQ/viewform?usp=header" class="btn-contact" target="_blank" rel="noopener">Submit Your Info &rarr;</a>
-        <span class="btn-note">Opens a short form &middot; Takes about 3 minutes</span>
-      </div>
-
-    </div>
+  </div>
 
   <footer>
     <div class="footer-links">
@@ -185,7 +218,7 @@
     <div class="footer-warning">&#9888; Respect the lake. Respect what dwells beneath.</div>
   </footer>
 
-  </div>
+</div>
 
 </body>
 </html>
