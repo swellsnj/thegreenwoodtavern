@@ -108,7 +108,7 @@ window.addEventListener('load',function(){
     lib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
     loadScript('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js',function(){
       loadScript('https://cdnjs.cloudflare.com/ajax/libs/turn.js/3/turn.min.js',async function(){
-        var pdfs=['TGT_Food_Menu.pdf','TGT_Drinks_Menu.pdf','TGT_Beer_Menu.pdf','TGT_Wine_Menu.pdf'];
+        var pdfs=['TGT_Brunch_Menu.pdf','TGT_Food_Menu.pdf','TGT_Beer_Menu.pdf','TGT_Wine_Menu.pdf'];
         var imgs=[];
         for(var j=0;j<pdfs.length;j++){var pages=await loadPDF(pdfs[j],lib);imgs=imgs.concat(pages);}
         allImages=imgs;
