@@ -161,6 +161,16 @@ footer{
   .contact-panel{padding:40px 24px;}
   .contact-panel:first-child{border-right:none;border-bottom:1px solid var(--border-green);}
 }
+
+@media(max-width:860px){
+  nav{padding:10px 20px;flex-wrap:wrap;gap:8px;}
+  .nav-links{position:static;transform:none;left:auto;flex-wrap:wrap;gap:12px;justify-content:center;width:100%;}
+  .nav-contact{display:none;}
+  .nav-logo{flex-shrink:0;}
+}
+@media(max-width:480px){
+  .nav-links a{font-size:9px;letter-spacing:1px;}
+}
 </style>
 </head>
 <body>
