@@ -76,6 +76,15 @@ body{font-family:var(--font-body);background:var(--dark);color:var(--text);min-h
   .friend-card{padding:36px 24px;}
   .cards{grid-template-columns:1fr;}
 }
+
+@media(max-width:860px){
+  nav{padding:10px 20px;flex-wrap:wrap;gap:8px;}
+  .nav-links{position:static;transform:none;left:auto;flex-wrap:wrap;gap:12px;justify-content:center;width:100%;}
+  .nav-contact{display:none;}
+}
+@media(max-width:480px){
+  .nav-links a{font-size:9px;letter-spacing:1px;}
+}
 </style>
 </head>
 <body>
