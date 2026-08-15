@@ -138,6 +138,20 @@ body{font-family:var(--font-body);background:var(--dark);color:var(--text);min-h
 @media(max-width:480px){
   .nav-links a{font-size:9px;letter-spacing:1px;}
 }
+
+#loyalty-overlay{position:fixed;inset:0;background:rgba(4,6,8,0.85);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(4px);}
+#loyalty-overlay.hidden{display:none;}
+#loyalty-modal{background:#0a1a14;border:0.5px solid #2a5a3a;max-width:420px;width:100%;padding:40px 36px;text-align:center;position:relative;box-shadow:0 20px 60px rgba(0,0,0,0.6);}
+.loy-close{position:absolute;top:14px;right:18px;background:none;border:none;color:#4a6a5a;font-size:22px;cursor:pointer;line-height:1;padding:4px;}
+.loy-close:hover{color:#8fc9a0;}
+.loy-eyebrow{font-family:'Lato',sans-serif;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#8a5a88;margin-bottom:14px;}
+#loyalty-modal h2{font-family:'Playfair Display',Georgia,serif;font-size:26px;font-weight:700;color:#d4ecd8;line-height:1.2;margin-bottom:12px;}
+#loyalty-modal p{font-family:'Lato',sans-serif;font-size:14px;color:#8aaa90;line-height:1.7;margin-bottom:28px;font-style:italic;}
+.loy-btn{display:inline-block;background:#8a5a88;color:#fff;font-family:'Lato',sans-serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;padding:14px 32px;transition:background 0.2s;}
+.loy-btn:hover{background:#a06ea0;}
+.loy-skip{display:block;margin-top:16px;font-family:'Lato',sans-serif;font-size:11px;color:#3a5a4a;cursor:pointer;letter-spacing:1px;transition:color 0.2s;background:none;border:none;}
+.loy-skip:hover{color:#6a9a78;}
+
 </style>
 </head>
 <body><nav class="nav">
@@ -206,5 +220,30 @@ body{font-family:var(--font-body);background:var(--dark);color:var(--text);min-h
   </div>
   <div class="footer-copy">&copy; The Greenwood Tavern &middot; 1934 Greenwood Lake Turnpike, Hewitt, NJ 07421</div>
   <div class="footer-warning">&#9888; Respect the lake. Respect what dwells beneath.</div>
-</footer></body>
+</footer><div id="loyalty-overlay" class="hidden">
+  <div id="loyalty-modal">
+    <button class="loy-close" onclick="closeLoyalty()" aria-label="Close">&times;</button>
+    <div class="loy-eyebrow">Members Only Perks</div>
+    <h2>Join Our Loyalty Program</h2>
+    <p>Earn points every visit, unlock rewards, and get exclusive offers — right through Toast. It&rsquo;s free and takes 30 seconds.</p>
+    <a href="https://www.toasttab.com/the-greenwood-tavern-new-hewitt-nj-new/rewardsSignup" target="_blank" rel="noopener" class="loy-btn" onclick="closeLoyalty()">Sign Up Free &rarr;</a>
+    <button class="loy-skip" onclick="closeLoyalty()">No thanks, maybe later</button>
+  </div>
+</div>
+<script>
+(function(){
+  if(!sessionStorage.getItem('loyaltyShown')){
+    setTimeout(function(){
+      document.getElementById('loyalty-overlay').classList.remove('hidden');
+      sessionStorage.setItem('loyaltyShown','1');
+    },2500);
+  }
+  document.getElementById('loyalty-overlay').addEventListener('click',function(e){
+    if(e.target===this)closeLoyalty();
+  });
+})();
+function closeLoyalty(){document.getElementById('loyalty-overlay').classList.add('hidden');}
+</script>
+
+</body>
 </html>
