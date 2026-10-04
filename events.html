@@ -114,6 +114,10 @@ body{font-family:var(--font-body);background:var(--dark);color:var(--text);min-h
 .no-events{text-align:center;padding:80px 40px;font-family:var(--font-head);font-style:italic;color:#4a6a5a;font-size:18px;}
 @media(max-width:600px){.events-grid{grid-template-columns:1fr;padding:32px 20px 60px;gap:24px;}}
 
+
+.event-rsvp{display:inline-block;margin-top:14px;padding:10px 22px;background:transparent;border:1px solid var(--pink-border);color:var(--pink);font-family:var(--font-body);font-size:11px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:background 0.2s,color 0.2s;}
+.event-rsvp:hover{background:var(--pink-border);color:#fff;}
+
 </style>
 </head>
 <body>
@@ -237,6 +241,24 @@ const EVENTS = [
     desc: 'Trivia night benefiting the Upper Greenwood Lake PTA, hosted by GM Scott Wells. Gather your team and test your knowledge on the lake.',
     poster: null,
     badge: 'Benefits UGL PTA'
+  }  ,
+  {
+    date: '2026-10-10',
+    tag: 'Community Event',
+    name: 'Cuptoberfest at Cupsaw Lake',
+    time: 'Saturday, October 10th &bull; 12:00pm &ndash; 7:00pm',
+    desc: 'The Greenwood Tavern is running the beer garden &amp; bar at Cupsaw Lake\'s Cuptoberfest! Live music all day, food, fall beverages, petting zoo, pony rides, tournaments, and more. Open to all &mdash; $20/adult, 13 &amp; under free.',
+    poster: 'evt_cuptoberfest.jpg',
+    badge: 'We Are the Beer Garden'
+  },
+  {
+    date: '2026-12-03',
+    tag: 'Trivia Night',
+    name: 'West Milford High School Trivia Night',
+    time: 'Thursday, December 3rd &bull; 7:00pm &ndash; 9:00pm',
+    desc: 'Trivia night benefiting the West Milford High School Freshmen and Seniors, hosted by GM Scott Wells. Gather your team and test your knowledge on the lake.',
+    poster: null,
+    badge: 'Benefits WM HS Freshmen &amp; Seniors'
   }
 ];
 
