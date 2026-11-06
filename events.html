@@ -370,7 +370,7 @@ function renderEvents() {
   container.innerHTML = upcoming.map(e => `
     <div class="event-card">
       ${e.poster
-        ? `<img class="event-poster" src="${e.poster}" alt="${e.name.replace(/&[^;]+;/g,'')}">`
+        ? `<button class="poster-btn" onclick="document.getElementById('lb-img').src='${e.poster}';document.getElementById('lightbox').classList.add('open')"><img class="event-poster" src="${e.poster}" alt="${e.name.replace(/&[^;]+;/g,'')}"></button>`
         : `<div class="event-poster-placeholder"><span class="evt-icon">&#127881;</span></div>`}
       <div class="event-body">
         <div class="event-tag">${e.tag}</div>
