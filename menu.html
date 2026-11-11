@@ -64,6 +64,18 @@ footer{background:var(--darkest);border-top:0.5px solid var(--border-green);padd
   .nav-links{gap:10px;}
   .nav-links a{font-size:10px;letter-spacing:1.5px;}
 }
+.menu-links-section{max-width:800px;margin:0 auto 48px;padding:0 32px;}
+.menu-links-label{font-family:var(--font-body);font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--green-dim);margin-bottom:20px;}
+.menu-links-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;}
+.menu-link-card{background:#0d1f14;border:1px solid var(--border-green);border-radius:3px;padding:16px 20px;display:flex;flex-direction:column;gap:6px;}
+.menu-link-name{font-family:var(--font-head);font-size:15px;color:#d4ecd8;font-weight:600;}
+.menu-link-avail{font-size:11px;color:var(--pink);letter-spacing:0.5px;line-height:1.5;}
+.menu-link-actions{display:flex;gap:10px;margin-top:6px;flex-wrap:wrap;}
+.menu-link-view{font-family:var(--font-body);font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--green-dim);text-decoration:none;border-bottom:1px solid var(--border-green);padding-bottom:1px;transition:color 0.2s,border-color 0.2s;}
+.menu-link-view:hover{color:var(--green);border-color:var(--green);}
+.menu-link-download{font-family:var(--font-body);font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#0a1a14;background:var(--green-dim);text-decoration:none;padding:5px 12px;border-radius:2px;transition:background 0.2s;}
+.menu-link-download:hover{background:var(--green);}
+@media(max-width:600px){.menu-links-section{padding:0 20px;}}
 </style>
 </head>
 <body>
@@ -102,6 +114,40 @@ footer{background:var(--darkest);border-top:0.5px solid var(--border-green);padd
     <button class="flip-btn" id="btnNext" onclick="flipNext()" disabled>Next &#8594;</button>
   </div>
 </div>
+<div class="menu-links-section">
+  <div class="menu-links-label">View or Download</div>
+  <div class="menu-links-grid">
+    <div class="menu-link-card">
+      <div class="menu-link-name">Food Menu</div>
+      <div class="menu-link-actions"><a class="menu-link-view" href="TGT_Food_Menu.pdf" target="_blank">View PDF</a></div>
+    </div>
+    <div class="menu-link-card">
+      <div class="menu-link-name">Brunch Menu</div>
+      <div class="menu-link-avail">Saturday &amp; Sunday, 10am–2pm<br>and select holidays</div>
+      <div class="menu-link-actions"><a class="menu-link-view" href="TGT_Brunch_Menu.pdf" target="_blank">View PDF</a></div>
+    </div>
+    <div class="menu-link-card">
+      <div class="menu-link-name">Beer Menu</div>
+      <div class="menu-link-actions"><a class="menu-link-view" href="TGT_Beer_Menu.pdf" target="_blank">View PDF</a></div>
+    </div>
+    <div class="menu-link-card">
+      <div class="menu-link-name">Wine Menu</div>
+      <div class="menu-link-actions"><a class="menu-link-view" href="TGT_Wine_Menu.pdf" target="_blank">View PDF</a></div>
+    </div>
+    <div class="menu-link-card">
+      <div class="menu-link-name">Taco Tuesday Menu</div>
+      <div class="menu-link-avail">Tuesdays only</div>
+      <div class="menu-link-actions"><a class="menu-link-view" href="TGT_Taco_Tuesday_Menu.pdf" target="_blank">View PDF</a></div>
+    </div>
+    <div class="menu-link-card">
+      <div class="menu-link-name">Takeout Menu</div>
+      <div class="menu-link-actions">
+        <a class="menu-link-view" href="TGT_Takeout_Menu.pdf" target="_blank">View PDF</a>
+        <a class="menu-link-download" href="TGT_Takeout_Menu.pdf" download="TGT_Takeout_Menu.pdf">&#8595; Download</a>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="specials-section">
   <div class="specials-label">Current Specials</div>
   <h2 class="specials-title">Weekday Lake Specials</h2>
@@ -137,7 +183,7 @@ window.addEventListener('load',function(){
     lib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
     loadScript('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js',function(){
       loadScript('https://cdnjs.cloudflare.com/ajax/libs/turn.js/3/turn.min.js',async function(){
-        var pdfs=['TGT_Brunch_Menu.pdf','TGT_Food_Menu.pdf','TGT_Beer_Menu.pdf','TGT_Wine_Menu.pdf'];
+        var pdfs=['TGT_Brunch_Menu.pdf','TGT_Food_Menu.pdf','TGT_Beer_Menu.pdf','TGT_Wine_Menu.pdf','TGT_Taco_Tuesday_Menu.pdf','TGT_Takeout_Menu.pdf'];
         var imgs=[];
         for(var j=0;j<pdfs.length;j++){var pages=await loadPDF(pdfs[j],lib);imgs=imgs.concat(pages);}
         allImages=imgs;
