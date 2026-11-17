@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Story | The Greenwood Tavern — Hewitt, NJ</title>
+<meta name="description" content="The Greenwood Tavern sits on the New Jersey shore of Greenwood Lake, on a site with a history stretching back to 1847. Learn the story of the lake, the land, and the people who built something here worth protecting.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BarOrPub",
+  "name": "The Greenwood Tavern",
+  "alternateName": "TGT",
+  "description": "A lakeside bar and restaurant on the New Jersey shore of Greenwood Lake, honoring the history and ecology of one of New Jersey's most storied lakes.",
+  "url": "https://thegreenwoodtavern.com",
+  "logo": "https://thegreenwoodtavern.com/tgt-logo.png",
+  "image": "https://thegreenwoodtavern.com/tgt-logo.png",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1934 Greenwood Lake Turnpike",
+    "addressLocality": "Hewitt",
+    "addressRegion": "NJ",
+    "postalCode": "07421",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 41.1226,
+    "longitude": -74.3621
+  },
+  "telephone": "+1-973-853-9900",
+  "email": "info@thegreenwoodtavern.com",
+  "servesCuisine": ["American", "Bar Food"],
+  "priceRange": "$$",
+  "openingHoursSpecification": [
+    {"@type": "OpeningHoursSpecification","dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"],"opens": "12:00","closes": "22:00"},
+    {"@type": "OpeningHoursSpecification","dayOfWeek": ["Friday"],"opens": "12:00","closes": "23:00"},
+    {"@type": "OpeningHoursSpecification","dayOfWeek": ["Saturday"],"opens": "09:00","closes": "23:00"},
+    {"@type": "OpeningHoursSpecification","dayOfWeek": ["Sunday"],"opens": "09:00","closes": "20:00"}
+  ],
+  "sameAs": [
+    "https://www.facebook.com/thegreenwoodtavern",
+    "https://www.instagram.com/thegreenwoodtavern",
+    "https://www.tiktok.com/@thegreenwoodtavern"
+  ]
+}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --dark:#0a1a14;
+  --darker:#060e0a;
+  --darkest:#040608;
+  --green:#8fc9a0;
+  --green-muted:#7aad8a;
+  --green-dim:#6a9a78;
+  --text:#c8d8c0;
+  --text-dim:#8aaa90;
+  --pink:#c9a0c4;
+  --pink-border:#8a5a88;
+  --blue:#4a7aaa;
+  --blue-light:#7aaacc;
+  --gold:#c4a85a;
+  --gold-dim:#a08840;
+  --border-green:#1a3a25;
+  --border-purple:#2a1a2a;
+  --font-head:'Playfair Display',Georgia,serif;
+  --font-body:'Lato',sans-serif;
+}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-body);background:var(--dark);color:var(--text);min-height:100vh;}
+
+/* NAV */
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 40px;background:rgba(4,6,8,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border-green);position:relative;width:100%;z-index:100;}
+.nav-logo img{height:52px;width:auto;}
+.nav-links{display:flex;gap:32px;position:absolute;left:50%;transform:translateX(-50%);}
+.nav-links a{font-family:var(--font-head);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--text-dim);text-decoration:none;transition:color 0.3s;}
+.nav-links a:hover,.nav-links a.active{color:var(--pink);}
+.nav-contact a{font-family:var(--font-body);font-size:11px;letter-spacing:1px;color:#4a7a5a;text-decoration:none;transition:color 0.3s;}
+.nav-contact a:hover{color:var(--green);}
+
+.page-wrap{padding-top:0;}
+
+/* HERO */
+.about-hero{
+  padding:72px 48px 56px;
+  max-width:900px;
+  margin:0 auto;
+  border-bottom:1px solid var(--border-green);
+  text-align:center;
+}
+.about-eyebrow{
+  font-family:var(--font-body);
+  font-size:10px;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  color:var(--green-dim);
+  margin-bottom:18px;
+}
+.about-hero h1{
+  font-family:var(--font-head);
+  font-size:clamp(36px,6vw,64px);
+  font-weight:normal;
+  color:var(--text);
+  line-height:1.08;
+  margin-bottom:20px;
+}
+.about-hero .sub{
+  font-size:15px;
+  color:var(--text-dim);
+  font-style:italic;
+  max-width:520px;
+  margin:0 auto 28px;
+  line-height:1.7;
+}
+.est-badge{
+  display:inline-block;
+  font-family:var(--font-head);
+  font-size:11px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:var(--gold);
+  border:1px solid var(--gold-dim);
+  padding:8px 20px;
+  opacity:0.7;
+}
+
+/* INTRO */
+.about-intro{
+  max-width:760px;
+  margin:0 auto;
+  padding:64px 48px;
+  border-bottom:1px solid var(--border-green);
+}
+.about-intro p{
+  font-size:16px;
+  line-height:1.9;
+  color:var(--text);
+  margin-bottom:22px;
+}
+.about-intro p:last-child{margin-bottom:0;}
+.about-intro em{color:var(--green);font-style:italic;}
+
+/* TIMELINE SECTION */
+.timeline-section{
+  max-width:1100px;
+  margin:0 auto;
+  padding:64px 48px;
+  border-bottom:1px solid var(--border-green);
+}
+.section-label{
+  font-family:var(--font-body);
+  font-size:10px;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  color:var(--green-dim);
+  margin-bottom:14px;
+}
+.section-title{
+  font-family:var(--font-head);
+  font-size:clamp(22px,3.5vw,34px);
+  font-weight:normal;
+  color:var(--text);
+  margin-bottom:48px;
+  line-height:1.2;
+}
+
+.timeline{
+  position:relative;
+  padding-left:32px;
+}
+.timeline::before{
+  content:'';
+  position:absolute;
+  left:0;
+  top:8px;
+  bottom:8px;
+  width:1px;
+  background:linear-gradient(to bottom, transparent, var(--border-green) 10%, var(--border-green) 90%, transparent);
+}
+
+.tl-entry{
+  position:relative;
+  margin-bottom:48px;
+  padding-left:28px;
+}
+.tl-entry::before{
+  content:'';
+  position:absolute;
+  left:-32px;
+  top:7px;
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:var(--border-green);
+  border:1px solid var(--green-dim);
+}
+.tl-year{
+  font-family:var(--font-head);
+  font-size:11px;
+  letter-spacing:2px;
+  color:var(--gold);
+  text-transform:uppercase;
+  margin-bottom:6px;
+}
+.tl-entry h3{
+  font-family:var(--font-head);
+  font-size:18px;
+  font-weight:normal;
+  color:var(--text);
+  margin-bottom:8px;
+  line-height:1.3;
+}
+.tl-entry p{
+  font-size:14px;
+  color:var(--text-dim);
+  line-height:1.8;
+}
+.tl-entry.featured::before{
+  background:var(--pink);
+  border-color:var(--pink);
+  width:9px;
+  height:9px;
+  left:-33px;
+  top:6px;
+}
+.tl-entry.featured .tl-year{color:var(--pink);}
+.tl-entry.featured h3{color:var(--pink);}
+
+/* NEWSPAPER PULL QUOTES */
+.newspaper-quote{
+  margin:40px 0;
+  padding:24px 28px;
+  border-left:2px solid var(--border-purple);
+  background:rgba(42,26,42,0.3);
+}
+.newspaper-quote .headline{
+  font-family:var(--font-head);
+  font-size:13px;
+  color:var(--text-dim);
+  font-style:italic;
+  line-height:1.5;
+  margin-bottom:6px;
+}
+.newspaper-quote .source{
+  font-family:var(--font-body);
+  font-size:10px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:rgba(200,216,192,0.25);
+}
+
+/* PHILOSOPHY SECTION */
+.philosophy-section{
+  max-width:1100px;
+  margin:0 auto;
+  padding:64px 48px;
+  border-bottom:1px solid var(--border-green);
+}
+.philosophy-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:1px;
+  background:var(--border-green);
+  border:1px solid var(--border-green);
+  margin-top:40px;
+}
+.philo-card{
+  background:var(--darker);
+  padding:40px 32px;
+}
+.philo-icon{
+  font-size:22px;
+  margin-bottom:16px;
+  opacity:0.7;
+}
+.philo-card h3{
+  font-family:var(--font-head);
+  font-size:17px;
+  font-weight:normal;
+  color:var(--text);
+  margin-bottom:10px;
+}
+.philo-card p{
+  font-size:13px;
+  color:var(--text-dim);
+  line-height:1.75;
+}
+
+/* LORE CLOSER */
+.lore-close{
+  max-width:760px;
+  margin:0 auto;
+  padding:72px 48px;
+  text-align:center;
+  border-bottom:1px solid var(--border-green);
+}
+.lore-close blockquote{
+  font-family:var(--font-head);
+  font-size:clamp(20px,3vw,28px);
+  font-weight:normal;
+  color:var(--text);
+  line-height:1.5;
+  margin-bottom:28px;
+  font-style:italic;
+}
+.lore-close blockquote span{color:var(--green);}
+.lore-close .tagline{
+  font-family:var(--font-body);
+  font-size:11px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:var(--text-dim);
+  margin-bottom:32px;
+}
+.lore-close .cta-row{
+  display:flex;
+  gap:16px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+.btn-outline{
+  display:inline-block;
+  border:1px solid var(--border-green);
+  background:transparent;
+  color:var(--text);
+  font-family:var(--font-head);
+  font-size:11px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  text-decoration:none;
+  padding:14px 32px;
+  transition:background 0.3s,color 0.3s,border-color 0.3s;
+}
+.btn-outline:hover{background:var(--green-dim);border-color:var(--green-dim);color:var(--darkest);}
+.btn-pink{border-color:var(--pink-border);color:var(--pink);}
+.btn-pink:hover{background:var(--pink);border-color:var(--pink);color:var(--darkest);}
+
+/* FOOTER */
+footer{background:var(--darkest);border-top:1px solid var(--border-green);padding:40px;text-align:center;}
+.footer-links{display:flex;gap:24px;justify-content:center;margin-bottom:14px;flex-wrap:wrap;}
+.footer-links a{font-family:var(--font-body);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(200,216,192,0.3);text-decoration:none;transition:color 0.2s;}
+.footer-links a:hover{color:var(--green);}
+.footer-copy{font-family:var(--font-body);font-size:11px;color:rgba(200,216,192,0.18);margin-bottom:6px;}
+.footer-warning{font-family:var(--font-body);font-size:10px;letter-spacing:1px;color:rgba(200,216,192,0.1);}
+
+/* RESPONSIVE */
+@media(max-width:860px){
+  .nav{padding:10px 20px;flex-wrap:wrap;gap:8px;}
+  .nav-links{position:static;transform:none;left:auto;flex-wrap:wrap;gap:12px;justify-content:center;width:100%;}
+  .nav-contact{display:none;}
+  .nav-logo{flex-shrink:0;}
+  .about-hero,.about-intro,.timeline-section,.philosophy-section,.lore-close{padding-left:24px;padding-right:24px;}
+  .philosophy-grid{grid-template-columns:1fr;}
+}
+@media(max-width:480px){
+  .nav-links a{font-size:9px;letter-spacing:1px;}
+  .about-hero{padding:48px 20px 40px;}
+}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-logo">
+    <a href="index.html"><img src="tgt-logo.png" alt="The Greenwood Tavern"></a>
+  </div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="events.html">Events</a>
+    <a href="things-to-do.html">Things To Do</a>
+    <a href="catering.html">Catering</a>
+    <a href="jobs.html">Jobs</a>
+    <a href="contact.html">Contact</a>
+    <a href="about.html" class="active">About</a>
+  </div>
+  <div class="nav-contact">
+    <a href="mailto:info@thegreenwoodtavern.com">info@thegreenwoodtavern.com</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="about-hero">
+    <div class="about-eyebrow">The Greenwood Tavern</div>
+    <h1>Some places are built.<br>Some are returned to.</h1>
+    <p class="sub">We sit on the New Jersey shore of Greenwood Lake — on a site with a history older than the state itself, on a lake that has long memory, and next to water that notices how you behave.</p>
+    <div class="est-badge">Est. 1847 &nbsp;&middot;&nbsp; Closed 1866 &nbsp;&middot;&nbsp; Returned 2025</div>
+  </div>
+
+  <div class="about-intro">
+    <p>The Greenwood Tavern opened on October 1, 2025, on the same New Jersey shore where the original Greenwood Tavern stood in 1847. Same lake. Same site. Different century. Same idea: good food, honest prices, everyone treated the same regardless of who they are. Nothing wasted. The lake honored. The land respected.</p>
+    <p>We're a lakeside bar and restaurant in Hewitt, NJ. We serve brunch on weekends, lunch and dinner every day, and we host live music, community events, and the occasional trivia night. We believe in this community and we believe in this lake.</p>
+    <p>We also believe the lake has watched everything that ever happened on its shore, and has opinions about it. That's not marketing. That's just what you start to think when you spend enough time out here on a foggy night.</p>
+    <p><em>What follows is the story we know. The parts we can verify, we have. The rest&hellip; well. The lake keeps its own records.</em></p>
+  </div>
+
+  <div class="timeline-section">
+    <div class="section-label">The History</div>
+    <div class="section-title">A Long Story, Briefly Told</div>
+
+    <div class="timeline">
+
+      <div class="tl-entry">
+        <div class="tl-year">~12,000 Years Ago</div>
+        <h3>Before Memory</h3>
+        <p>The first humans arrive at Quampium Lake. They find carvings already in the rocks near the shore &mdash; a great winged beast, wings folded, eyes open. They find deep scratch marks beside the carvings. They did not make either. They carve their own witness accounts alongside what they found. The lake has a guardian older than human memory.</p>
+      </div>
+
+      <div class="tl-entry">
+        <div class="tl-year">1702</div>
+        <h3>The Cheesecock Patent</h3>
+        <p>Five Munsee signatories &mdash; Moringamaghan, Skawgus, Ughquaw, Onickotopp, and Aioqhquaherae &mdash; transfer Quampium to British colonists. The last keepers of the lake's oldest secret hand it to people who will not honor it. The Munsee warn the colonists about Quampique. The colonists thank them politely and ignore everything they say. The Ramapough &mdash; mountain cousins to the Munsee &mdash; retreat into the hills. They do not leave entirely. They watch.</p>
+      </div>
+
+      <div class="tl-entry">
+        <div class="tl-year">1765</div>
+        <h3>Long Pond Ironworks</h3>
+        <p>Peter Hasenclever dams the lake. Long Pond Ironworks is established. Five hundred European workers arrive. The lake is redirected, flooded, industrialized. Beneath the water, something old and vast shifts in its sleep.</p>
+      </div>
+
+      <div class="tl-entry">
+        <div class="tl-year">1837</div>
+        <h3>The Second Flood</h3>
+        <p>A second dam raises the lake twelve feet. Ancient underwater rock formations crack and shift. The changes reach something deep in the southern shore &mdash; something that has been patient for ten thousand years, and is running out of patience. Quampique fully awakens. He does not yet act. He watches. He remembers everything.</p>
+      </div>
+
+      <div class="tl-entry featured">
+        <div class="tl-year">1847</div>
+        <h3>The First Greenwood Tavern</h3>
+        <p>Appleby Awosting opens <em>The Greenwood Tavern</em> on the New Jersey shore of Quampium Lake. He names it for the dense green woods surrounding the property. This is the first establishment to bear the "Greenwood" name &mdash; and locals begin calling the lake itself "the lake by the Greenwood." The name Greenwood Lake begins its slow replacement of Long Pond. The Tavern quickly becomes the social center of the growing community. It is not, by any honest accounting, run honestly.</p>
+      </div>
+
+      <div class="tl-entry">
+        <div class="tl-year">1849&ndash;1851</div>
+        <h3>Van Houten's Dynamite</h3>
+        <p>Cornelius Jacob Van Houten &mdash; a Tammany-connected land speculator &mdash; purchases a massive swath of lakeside land he cannot afford to develop properly. He buys dynamite instead. For two years, indiscriminate blasting reshapes the southern shoreline. Ancient underwater rock formations that have been unchanged since before any human walked this land are shattered. Some of those formations border something very old and very large.</p>
+        <p style="margin-top:12px;">In 1851, Van Houten disappears during a blasting operation. The lake is perfectly still afterward. No ripples. No waves. The Warwick Advertiser reports it as a "blasting accident."</p>
+      </div>
+
+      <div class="newspaper-quote">
+        <div class="headline">"Mysterious Disappearance of Land Developer at Long Pond &mdash; Blasting Accident Suspected &mdash; Ramapough Elder Warns of Ancient Guardian &mdash; Locals Dismiss Native Superstition"</div>
+        <div class="source">The Warwick Advertiser &mdash; June 14, 1851</div>
+      </div>
+
+      <div class="tl-entry">
+        <div class="tl-year">~1854</div>
+        <h3>Ohanzee Wanishi</h3>
+        <p>A Ramapough man named Ohanzee "Hanzee" Wanishi begins work at Long Pond Ironworks. Third generation removed from the Munsee who signed the Cheesecock Patent, he carries the oldest knowledge of Quampique passed down through his family. He works alongside Charles Emerson Jr., a decent German ironworker with a daughter named Aubree. Over the following years, Hanzee and Aubree marry quietly. Charles Emerson Jr. does not turn his daughter away. That quiet acceptance makes him one of the most moral men in this entire story.</p>
+      </div>
+
+      <div class="tl-entry">
+        <div class="tl-year">~1858</div>
+        <h3>Everett Charles Winchester III</h3>
+        <p>Hanzee and Aubree's son is born. They name him Everett Charles Winchester III &mdash; honoring his maternal grandfather in the given name, encoding his father's Munsee name in the surname. <em>Wanishi</em> in the language of his fathers. <em>Winchester</em> to the world. His parents know what they've done. No one else does. Hanzee holds his newborn son and says nothing for a very long time.</p>
+      </div>
+
+      <div class="tl-entry">
+        <div class="tl-year">1861&ndash;1862</div>
+        <h3>Captain Haledon &amp; the SS Aaron Burr</h3>
+        <p>Lord Reginald Ashford-Drummond &mdash; a Tammany-connected political figure with a fraudulent English title &mdash; has been running a corrupt protection scheme with Awosting's Tavern for years. As reports of lake disturbances multiply and threaten his investment schemes, Drummond hires Captain Nathaniel D. Haledon: a man of flexible morals and inflatable reputation. The arrangement: build a vessel, hunt Quampique, restore investor confidence in the lake.</p>
+        <p style="margin-top:12px;">What Haledon builds &mdash; pocketing most of Drummond's money &mdash; is a glorified patrol boat dressed to look imposing. He names it the <em>SS Aaron Burr.</em> He patrols Quampium Lake, fabricating battle reports, eating and drinking at TGT for free on Drummond's tab. His crew knows the truth. They say nothing. They need the work.</p>
+        <p style="margin-top:12px;">In October 1862, the SS Aaron Burr sails into the fog off the southern shore one final time. The crew stands at the rail. They do not move to help their captain. The fog takes only Haledon. The crew rows back before dawn and says nothing.</p>
+      </div>
+
+      <div class="newspaper-quote">
+        <div class="headline">"SS Aaron Burr Returns Without Captain &mdash; Crew Silent on Circumstances of Haledon's Disappearance &mdash; Awosting's Greenwood Tavern Reports Record Season"</div>
+        <div class="source">The Warwick Advertiser &mdash; October 3, 1862</div>
+      </div>
+
+      <div class="tl-entry featured">
+        <div class="tl-year">1866</div>
+        <h3>The Reckoning</h3>
+        <p>On a dark night in spring, Appleby Awosting closes The Greenwood Tavern for the evening. The fog has been building off the southern shore since sundown. He counts his money. Every coin. Every bill. He stacks it on the bar. He steps into the fog and is never seen again.</p>
+        <p style="margin-top:12px;">The following morning, locals find TGT unlocked, chairs stacked, bar wiped clean &mdash; and on the bar, undisturbed, every coin and bill exactly where he counted it. Appleby Awosting would sooner have left his own hand behind than that money.</p>
+        <p style="margin-top:12px;">The Greenwood Tavern closes the same week. By summer, Drummond stands on the dock where he has held court for twenty years, raging about everything that has been taken from him. The fog comes in off the southern shore. Drummond's hat is found floating at the water's edge the following morning. His investment documents &mdash; detailing precisely how much of other people's money he had collected &mdash; are found perfectly dry on the dock. Like Awosting's cash, he left behind the one thing that proved his guilt.</p>
+      </div>
+
+      <div class="newspaper-quote">
+        <div class="headline">"Lord Ashford-Drummond Missing &mdash; Investment Documents Discovered on Dock &mdash; Community Demands Answers &mdash; Greenwood Lake Native Worker Declines Comment &mdash; Ironworks Employee Seen Smiling for First Time in Memory"</div>
+        <div class="source">The Warwick Advertiser &mdash; August 28, 1866</div>
+      </div>
+
+      <div class="tl-entry">
+        <div class="tl-year">1878&ndash;1884</div>
+        <h3>Winchester Rises</h3>
+        <p>Into the power vacuum left by Drummond's disappearance comes a quiet, well-read young man who speaks the language of science and civic responsibility &mdash; and carries older knowledge underneath. Everett Charles Winchester III is elected to community leadership in his early twenties. He drafts formal conservation proposals: restrictions on lakeside excavation, prohibitions on waste disposal near the water, hunting regulations, forest protections. The old Tammany network pushes back. Everett pushes harder.</p>
+        <p style="margin-top:12px;">In 1882, Long Pond Ironworks closes its final furnaces after 120 years of operation. Hanzee Wanishi retires. That night, he tells his son everything &mdash; not just the old stories. What he saw in 1849 when Van Houten's dynamite went wrong. What he saw the morning after Awosting disappeared. What he saw on the dock the night Drummond's hat floated in the still water.</p>
+        <p style="margin-top:12px;">Everett asks his father one question: <em>What does Quampique want?</em></p>
+        <p style="margin-top:8px;">Hanzee is quiet for a long time. <em>"The same thing we want,"</em> he says finally. <em>"For people to stop."</em></p>
+      </div>
+
+      <div class="tl-entry">
+        <div class="tl-year">1886</div>
+        <h3>The Last Sighting</h3>
+        <p>The final Quampique sighting reported in the Warwick Advertiser. A fisherman on the southern shore sees something vast moving just below the surface on a foggy evening. Glowing green eyes. Enormous dark wings folded against a scaled body. It watches him for a long moment. Then it slips beneath the surface without a ripple. The fisherman is notable for one thing: he had done nothing wrong. He was simply fishing. Quampique looked at him and found nothing to punish. He went back to sleep.</p>
+      </div>
+
+      <div class="tl-entry">
+        <div class="tl-year">1892</div>
+        <h3>The Retrospective</h3>
+        <p>The Warwick Advertiser publishes its final Quampique article &mdash; a retrospective on forty years of lake lore. The article notes that no credible sighting has been reported in six years. It mentions, briefly, a native ironworks worker who was always seen at the shore after incidents &mdash; a man named, locals believed, something like "Wanishi" &mdash; but whose full story was never recorded. The reporter does not know what the name means.</p>
+      </div>
+
+      <div class="tl-entry">
+        <div class="tl-year">1892&ndash;2025</div>
+        <h3>The Long Silence</h3>
+        <p>For over 130 years, Quampium Lake is peaceful. The conservation legacy of Everett Charles Winchester III holds. The community grows, changes, modernizes &mdash; but the lake is protected. The ecology recovers. The wildlife returns. The story fades from memory into folklore into legend into something people half-remember from a grandparent's story.</p>
+        <p style="margin-top:12px;">The Greenwood Tavern site sits empty for over 150 years. Various structures come and go. The land changes hands.</p>
+        <p style="margin-top:12px;">Quampique sleeps.</p>
+      </div>
+
+      <div class="tl-entry featured">
+        <div class="tl-year">October 1, 2025</div>
+        <h3>The Return</h3>
+        <p>Someone decides to open a bar and restaurant on the New Jersey shore of Greenwood Lake. They name it The Greenwood Tavern. They do it right: good food, honest prices, everyone treated the same regardless of who they are. Nothing wasted. The lake honored. The land respected.</p>
+        <p style="margin-top:12px;">And somewhere in the deep water of the southern shore, where the ancient rock formations still bear the scars of Van Houten's dynamite, something old and vast stirs slightly in its sleep.</p>
+        <p style="margin-top:12px;">And settles back down. <em>For now.</em></p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="philosophy-section">
+    <div class="section-label">How We Run It</div>
+    <div class="section-title">What We Actually Believe</div>
+    <div class="philosophy-grid">
+      <div class="philo-card">
+        <div class="philo-icon">🌿</div>
+        <h3>Honor the Lake</h3>
+        <p>We're on the shore because of this lake. We take that seriously. We try to run a clean operation, give back to the community that surrounds the water, and treat the land with the respect it's earned over twelve thousand years of history.</p>
+      </div>
+      <div class="philo-card">
+        <div class="philo-icon">🍺</div>
+        <h3>No Hierarchy at the Bar</h3>
+        <p>Everyone gets the same service regardless of who they are. That's not a policy. That's the whole point. The original Greenwood Tavern failed this test. We intend to pass it.</p>
+      </div>
+      <div class="philo-card">
+        <div class="philo-icon">🎵</div>
+        <h3>Community First</h3>
+        <p>Live music, trivia nights, school fundraisers, family events &mdash; we're here because this community exists. The lake doesn't just deserve a good bar. It deserves a place that acts like a good neighbor.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="lore-close">
+    <blockquote>&ldquo;The lake doesn't punish <span>the reverent.</span><br>It protects them.&rdquo;</blockquote>
+    <div class="tagline">Food &amp; Drinks To Die For &mdash; but stay away from the fog.</div>
+    <div class="cta-row">
+      <a href="index.html" class="btn-outline">Visit Us</a>
+      <a href="events.html" class="btn-outline btn-pink">See What's On</a>
+    </div>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-links">
+    <a href="https://www.facebook.com/thegreenwoodtavern" target="_blank" rel="noopener">Facebook</a>
+    <a href="https://www.instagram.com/thegreenwoodtavern" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.tiktok.com/@thegreenwoodtavern" target="_blank" rel="noopener">TikTok</a>
+    <a href="mailto:info@thegreenwoodtavern.com">Email Us</a>
+  </div>
+  <div class="footer-copy">&copy; The Greenwood Tavern &middot; Greenwood Lake, NJ</div>
+  <div class="footer-warning">&#9888; Respect the lake. Respect what dwells beneath.</div>
+</footer>
+
+</body>
+</html>
