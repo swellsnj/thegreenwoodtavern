@@ -1,4 +1,4 @@
-h<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -317,11 +317,11 @@ badge: 'Benefits Ringwood Ref'
 {
   date: '2026-11-22',
   tag: 'Family Event',
-  name: 'Little Lake Dwellers Club',
-  time: 'Sunday, November 22nd &bull; 12:00pm',
-  desc: 'A special afternoon event for our youngest lake dwellers. Come out and enjoy the fun at The Greenwood Tavern.',
-  poster: 'evt_superhero_university.jpg',
-  badge: 'No Charge',
+  name: 'Little Lake Monsters Club',
+  time: 'Sunday, November 22nd &bull; 12:00pm &ndash; 1:00pm',
+  desc: 'A social experience for kids with Peppermint! Free event &mdash; reservations are strongly encouraged.',
+  poster: 'evt_little_lake_monsters.jpg',
+  badge: 'Free · Reservations Strongly Encouraged',
   rsvp: 'https://bit.ly/4zjb7aN'
 },
 {
@@ -329,9 +329,9 @@ badge: 'Benefits Ringwood Ref'
   tag: 'Special Event',
   name: 'A Newlywed Game Brunch',
   time: 'Sunday, December 6th &bull; 1:00pm',
-  desc: 'Think you know your partner? Put it to the test at our Newlywed Game Brunch! Reservations recommended; required for participating couples.',
+  desc: 'Think you know your partner? Put it to the test at our Newlywed Game Brunch! Free event &mdash; reservations are strongly encouraged. Advance reservations required for contestants (while availability lasts).',
   poster: 'evt_newlywed.jpg',
-  badge: 'No Charge',
+  badge: 'Free · Contestants Must Reserve',
   rsvp: 'https://bit.ly/4BXtKUj'
 },
 {
@@ -380,7 +380,9 @@ function renderEvents() {
         <div class="event-date">${e.time}</div>
         <div class="event-desc">${e.desc}</div>
         ${e.badge ? `<div class="event-badge">${e.badge}</div>` : ''}
-        <a class="event-reservations" href="https://toast.app/r/the-greenwood-tavern-new-hewitt-nj-new" target="_blank" rel="noopener">📅 Reservations Encouraged</a>
+        ${e.rsvp
+          ? `<a class="event-rsvp" href="${e.rsvp}" target="_blank" rel="noopener">Reserve Now</a>`
+          : `<a class="event-reservations" href="https://toast.app/r/the-greenwood-tavern-new-hewitt-nj-new" target="_blank" rel="noopener">📅 Reservations Encouraged</a>`}
       </div>
     </div>
   `).join('');
