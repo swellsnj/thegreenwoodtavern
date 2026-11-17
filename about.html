@@ -47,7 +47,7 @@
 </script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-:root{
+:root{{
   --dark:#0a1a14;
   --darker:#060e0a;
   --darkest:#040608;
@@ -165,89 +165,23 @@ body{font-family:var(--font-body);background:var(--dark);color:var(--text);min-h
   line-height:1.2;
 }
 
-.timeline{
-  position:relative;
-  padding-left:32px;
+.lore-prose{
+  max-width:720px;
 }
-.timeline::before{
-  content:'';
-  position:absolute;
-  left:0;
-  top:8px;
-  bottom:8px;
-  width:1px;
-  background:linear-gradient(to bottom, transparent, var(--border-green) 10%, var(--border-green) 90%, transparent);
+.lore-prose p{
+  font-size:15px;
+  color:var(--text-dim);
+  line-height:1.9;
+  margin-bottom:24px;
 }
-
-.tl-entry{
-  position:relative;
-  margin-bottom:48px;
-  padding-left:28px;
-}
-.tl-entry::before{
-  content:'';
-  position:absolute;
-  left:-32px;
-  top:7px;
-  width:7px;
-  height:7px;
-  border-radius:50%;
-  background:var(--border-green);
-  border:1px solid var(--green-dim);
-}
-.tl-year{
-  font-family:var(--font-head);
-  font-size:11px;
-  letter-spacing:2px;
-  color:var(--gold);
-  text-transform:uppercase;
-  margin-bottom:6px;
-}
-.tl-entry h3{
-  font-family:var(--font-head);
-  font-size:18px;
-  font-weight:normal;
+.lore-prose p em{
   color:var(--text);
-  margin-bottom:8px;
-  line-height:1.3;
-}
-.tl-entry p{
-  font-size:14px;
-  color:var(--text-dim);
-  line-height:1.8;
-}
-.tl-entry.featured::before{
-  background:var(--pink);
-  border-color:var(--pink);
-  width:9px;
-  height:9px;
-  left:-33px;
-  top:6px;
-}
-.tl-entry.featured .tl-year{color:var(--pink);}
-.tl-entry.featured h3{color:var(--pink);}
-
-/* NEWSPAPER PULL QUOTES */
-.newspaper-quote{
-  margin:40px 0;
-  padding:24px 28px;
-  border-left:2px solid var(--border-purple);
-  background:rgba(42,26,42,0.3);
-}
-.newspaper-quote .headline{
-  font-family:var(--font-head);
-  font-size:13px;
-  color:var(--text-dim);
   font-style:italic;
-  line-height:1.5;
-  margin-bottom:6px;
 }
-.newspaper-quote .source{
-  font-family:var(--font-body);
-  font-size:10px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  color:rgba(200,216,192,0.25);
+.lore-prose p:last-child{
+  color:var(--text);
+  font-style:italic;
+  margin-bottom:0;
 }
 
 /* PHILOSOPHY SECTION */
@@ -387,7 +321,7 @@ footer{background:var(--darkest);border-top:1px solid var(--border-green);paddin
   <div class="about-hero">
     <div class="about-eyebrow">The Greenwood Tavern</div>
     <h1>Some places are built.<br>Some are returned to.</h1>
-    <p class="sub">We sit on the New Jersey shore of Greenwood Lake — on a site with a history older than the state itself, on a lake that has long memory, and next to water that notices how you behave.</p>
+    <p class="sub">We sit on the New Jersey shore of Greenwood Lake &mdash; on a site with a history older than the state itself, on a lake that has long memory, and next to water that notices how you behave.</p>
     <div class="est-badge">Est. 1847 &nbsp;&middot;&nbsp; Closed 1866 &nbsp;&middot;&nbsp; Returned 2025</div>
   </div>
 
@@ -402,124 +336,25 @@ footer{background:var(--darkest);border-top:1px solid var(--border-green);paddin
     <div class="section-label">The History</div>
     <div class="section-title">A Long Story, Briefly Told</div>
 
-    <div class="timeline">
+    <div class="lore-prose">
 
-      <div class="tl-entry">
-        <div class="tl-year">~12,000 Years Ago</div>
-        <h3>Before Memory</h3>
-        <p>The first humans arrive at Quampium Lake. They find carvings already in the rocks near the shore &mdash; a great winged beast, wings folded, eyes open. They find deep scratch marks beside the carvings. They did not make either. They carve their own witness accounts alongside what they found. The lake has a guardian older than human memory.</p>
-      </div>
+      <p>In 1847, a man named Appleby Awosting opened a tavern on the New Jersey shore of what was then called Long Pond Lake. He named it for the dense woods surrounding the property &mdash; <em>The Greenwood Tavern</em> &mdash; and locals took to the name so readily that they began calling the lake itself "the lake by the Greenwood." That name stuck. Awosting's didn't.</p>
 
-      <div class="tl-entry">
-        <div class="tl-year">1702</div>
-        <h3>The Cheesecock Patent</h3>
-        <p>Five Munsee signatories &mdash; Moringamaghan, Skawgus, Ughquaw, Onickotopp, and Aioqhquaherae &mdash; transfer Quampium to British colonists. The last keepers of the lake's oldest secret hand it to people who will not honor it. The Munsee warn the colonists about Quampique. The colonists thank them politely and ignore everything they say. The Ramapough &mdash; mountain cousins to the Munsee &mdash; retreat into the hills. They do not leave entirely. They watch.</p>
-      </div>
+      <p>The Tavern became the social center of a growing community. It was also, by most honest accounts, run by a man who saw the community primarily as something to profit from. He had partners of similar character. For nearly two decades, the Tavern operated as the kind of establishment that serves everyone a drink while quietly picking their pockets with the other hand.</p>
 
-      <div class="tl-entry">
-        <div class="tl-year">1765</div>
-        <h3>Long Pond Ironworks</h3>
-        <p>Peter Hasenclever dams the lake. Long Pond Ironworks is established. Five hundred European workers arrive. The lake is redirected, flooded, industrialized. Beneath the water, something old and vast shifts in its sleep.</p>
-      </div>
+      <p>The lake, apparently, noticed.</p>
 
-      <div class="tl-entry">
-        <div class="tl-year">1837</div>
-        <h3>The Second Flood</h3>
-        <p>A second dam raises the lake twelve feet. Ancient underwater rock formations crack and shift. The changes reach something deep in the southern shore &mdash; something that has been patient for ten thousand years, and is running out of patience. Quampique fully awakens. He does not yet act. He watches. He remembers everything.</p>
-      </div>
+      <p>There are old stories about Greenwood Lake &mdash; older than Awosting, older than the ironworks, older than the first European to lay eyes on it. Stories about something that lives in the deep water off the southern shore. Something with wings folded against a scaled body and eyes that glow faintly green in the fog. Something patient, territorial, and not particularly forgiving of people who disrespect the water or the community that depends on it. The Ramapough Lenape, who knew this land long before anyone else, had a name for it: <em>Quampique.</em></p>
 
-      <div class="tl-entry featured">
-        <div class="tl-year">1847</div>
-        <h3>The First Greenwood Tavern</h3>
-        <p>Appleby Awosting opens <em>The Greenwood Tavern</em> on the New Jersey shore of Quampium Lake. He names it for the dense green woods surrounding the property. This is the first establishment to bear the "Greenwood" name &mdash; and locals begin calling the lake itself "the lake by the Greenwood." The name Greenwood Lake begins its slow replacement of Long Pond. The Tavern quickly becomes the social center of the growing community. It is not, by any honest accounting, run honestly.</p>
-      </div>
+      <p>On a spring night in 1866, Awosting closed up for the evening. The fog had been building off the southern shore since sundown. He counted his money &mdash; every coin, every bill &mdash; stacked it on the bar, stepped outside, and was never seen again. The following morning, locals found the Tavern unlocked, chairs stacked, bar wiped clean, and every coin and bill exactly where he'd left it. Appleby Awosting would sooner have left his own hand behind than that money.</p>
 
-      <div class="tl-entry">
-        <div class="tl-year">1849&ndash;1851</div>
-        <h3>Van Houten's Dynamite</h3>
-        <p>Cornelius Jacob Van Houten &mdash; a Tammany-connected land speculator &mdash; purchases a massive swath of lakeside land he cannot afford to develop properly. He buys dynamite instead. For two years, indiscriminate blasting reshapes the southern shoreline. Ancient underwater rock formations that have been unchanged since before any human walked this land are shattered. Some of those formations border something very old and very large.</p>
-        <p style="margin-top:12px;">In 1851, Van Houten disappears during a blasting operation. The lake is perfectly still afterward. No ripples. No waves. The Warwick Advertiser reports it as a "blasting accident."</p>
-      </div>
+      <p>The Greenwood Tavern closed that week. The site passed through various hands over the following 159 years. The story faded from local memory into folklore into something people half-remember from a grandparent's warning about the fog.</p>
 
-      <div class="newspaper-quote">
-        <div class="headline">"Mysterious Disappearance of Land Developer at Long Pond &mdash; Blasting Accident Suspected &mdash; Ramapough Elder Warns of Ancient Guardian &mdash; Locals Dismiss Native Superstition"</div>
-        <div class="source">The Warwick Advertiser &mdash; June 14, 1851</div>
-      </div>
+      <p>On October 1, 2025, someone decided to open a bar and restaurant on that same shore. They named it The Greenwood Tavern. They intended to do it right: good food, honest prices, everyone treated the same regardless of who they are. Nothing wasted. The lake honored. The land respected.</p>
 
-      <div class="tl-entry">
-        <div class="tl-year">~1854</div>
-        <h3>Ohanzee Wanishi</h3>
-        <p>A Ramapough man named Ohanzee "Hanzee" Wanishi begins work at Long Pond Ironworks. Third generation removed from the Munsee who signed the Cheesecock Patent, he carries the oldest knowledge of Quampique passed down through his family. He works alongside Charles Emerson Jr., a decent German ironworker with a daughter named Aubree. Over the following years, Hanzee and Aubree marry quietly. Charles Emerson Jr. does not turn his daughter away. That quiet acceptance makes him one of the most moral men in this entire story.</p>
-      </div>
+      <p>Somewhere in the deep water off the southern shore, something old and patient stirred slightly in its sleep.</p>
 
-      <div class="tl-entry">
-        <div class="tl-year">~1858</div>
-        <h3>Everett Charles Winchester III</h3>
-        <p>Hanzee and Aubree's son is born. They name him Everett Charles Winchester III &mdash; honoring his maternal grandfather in the given name, encoding his father's Munsee name in the surname. <em>Wanishi</em> in the language of his fathers. <em>Winchester</em> to the world. His parents know what they've done. No one else does. Hanzee holds his newborn son and says nothing for a very long time.</p>
-      </div>
-
-      <div class="tl-entry">
-        <div class="tl-year">1861&ndash;1862</div>
-        <h3>Captain Haledon &amp; the SS Aaron Burr</h3>
-        <p>Lord Reginald Ashford-Drummond &mdash; a Tammany-connected political figure with a fraudulent English title &mdash; has been running a corrupt protection scheme with Awosting's Tavern for years. As reports of lake disturbances multiply and threaten his investment schemes, Drummond hires Captain Nathaniel D. Haledon: a man of flexible morals and inflatable reputation. The arrangement: build a vessel, hunt Quampique, restore investor confidence in the lake.</p>
-        <p style="margin-top:12px;">What Haledon builds &mdash; pocketing most of Drummond's money &mdash; is a glorified patrol boat dressed to look imposing. He names it the <em>SS Aaron Burr.</em> He patrols Quampium Lake, fabricating battle reports, eating and drinking at TGT for free on Drummond's tab. His crew knows the truth. They say nothing. They need the work.</p>
-        <p style="margin-top:12px;">In October 1862, the SS Aaron Burr sails into the fog off the southern shore one final time. The crew stands at the rail. They do not move to help their captain. The fog takes only Haledon. The crew rows back before dawn and says nothing.</p>
-      </div>
-
-      <div class="newspaper-quote">
-        <div class="headline">"SS Aaron Burr Returns Without Captain &mdash; Crew Silent on Circumstances of Haledon's Disappearance &mdash; Awosting's Greenwood Tavern Reports Record Season"</div>
-        <div class="source">The Warwick Advertiser &mdash; October 3, 1862</div>
-      </div>
-
-      <div class="tl-entry featured">
-        <div class="tl-year">1866</div>
-        <h3>The Reckoning</h3>
-        <p>On a dark night in spring, Appleby Awosting closes The Greenwood Tavern for the evening. The fog has been building off the southern shore since sundown. He counts his money. Every coin. Every bill. He stacks it on the bar. He steps into the fog and is never seen again.</p>
-        <p style="margin-top:12px;">The following morning, locals find TGT unlocked, chairs stacked, bar wiped clean &mdash; and on the bar, undisturbed, every coin and bill exactly where he counted it. Appleby Awosting would sooner have left his own hand behind than that money.</p>
-        <p style="margin-top:12px;">The Greenwood Tavern closes the same week. By summer, Drummond stands on the dock where he has held court for twenty years, raging about everything that has been taken from him. The fog comes in off the southern shore. Drummond's hat is found floating at the water's edge the following morning. His investment documents &mdash; detailing precisely how much of other people's money he had collected &mdash; are found perfectly dry on the dock. Like Awosting's cash, he left behind the one thing that proved his guilt.</p>
-      </div>
-
-      <div class="newspaper-quote">
-        <div class="headline">"Lord Ashford-Drummond Missing &mdash; Investment Documents Discovered on Dock &mdash; Community Demands Answers &mdash; Greenwood Lake Native Worker Declines Comment &mdash; Ironworks Employee Seen Smiling for First Time in Memory"</div>
-        <div class="source">The Warwick Advertiser &mdash; August 28, 1866</div>
-      </div>
-
-      <div class="tl-entry">
-        <div class="tl-year">1878&ndash;1884</div>
-        <h3>Winchester Rises</h3>
-        <p>Into the power vacuum left by Drummond's disappearance comes a quiet, well-read young man who speaks the language of science and civic responsibility &mdash; and carries older knowledge underneath. Everett Charles Winchester III is elected to community leadership in his early twenties. He drafts formal conservation proposals: restrictions on lakeside excavation, prohibitions on waste disposal near the water, hunting regulations, forest protections. The old Tammany network pushes back. Everett pushes harder.</p>
-        <p style="margin-top:12px;">In 1882, Long Pond Ironworks closes its final furnaces after 120 years of operation. Hanzee Wanishi retires. That night, he tells his son everything &mdash; not just the old stories. What he saw in 1849 when Van Houten's dynamite went wrong. What he saw the morning after Awosting disappeared. What he saw on the dock the night Drummond's hat floated in the still water.</p>
-        <p style="margin-top:12px;">Everett asks his father one question: <em>What does Quampique want?</em></p>
-        <p style="margin-top:8px;">Hanzee is quiet for a long time. <em>"The same thing we want,"</em> he says finally. <em>"For people to stop."</em></p>
-      </div>
-
-      <div class="tl-entry">
-        <div class="tl-year">1886</div>
-        <h3>The Last Sighting</h3>
-        <p>The final Quampique sighting reported in the Warwick Advertiser. A fisherman on the southern shore sees something vast moving just below the surface on a foggy evening. Glowing green eyes. Enormous dark wings folded against a scaled body. It watches him for a long moment. Then it slips beneath the surface without a ripple. The fisherman is notable for one thing: he had done nothing wrong. He was simply fishing. Quampique looked at him and found nothing to punish. He went back to sleep.</p>
-      </div>
-
-      <div class="tl-entry">
-        <div class="tl-year">1892</div>
-        <h3>The Retrospective</h3>
-        <p>The Warwick Advertiser publishes its final Quampique article &mdash; a retrospective on forty years of lake lore. The article notes that no credible sighting has been reported in six years. It mentions, briefly, a native ironworks worker who was always seen at the shore after incidents &mdash; a man named, locals believed, something like "Wanishi" &mdash; but whose full story was never recorded. The reporter does not know what the name means.</p>
-      </div>
-
-      <div class="tl-entry">
-        <div class="tl-year">1892&ndash;2025</div>
-        <h3>The Long Silence</h3>
-        <p>For over 130 years, Quampium Lake is peaceful. The conservation legacy of Everett Charles Winchester III holds. The community grows, changes, modernizes &mdash; but the lake is protected. The ecology recovers. The wildlife returns. The story fades from memory into folklore into legend into something people half-remember from a grandparent's story.</p>
-        <p style="margin-top:12px;">The Greenwood Tavern site sits empty for over 150 years. Various structures come and go. The land changes hands.</p>
-        <p style="margin-top:12px;">Quampique sleeps.</p>
-      </div>
-
-      <div class="tl-entry featured">
-        <div class="tl-year">October 1, 2025</div>
-        <h3>The Return</h3>
-        <p>Someone decides to open a bar and restaurant on the New Jersey shore of Greenwood Lake. They name it The Greenwood Tavern. They do it right: good food, honest prices, everyone treated the same regardless of who they are. Nothing wasted. The lake honored. The land respected.</p>
-        <p style="margin-top:12px;">And somewhere in the deep water of the southern shore, where the ancient rock formations still bear the scars of Van Houten's dynamite, something old and vast stirs slightly in its sleep.</p>
-        <p style="margin-top:12px;">And settles back down. <em>For now.</em></p>
-      </div>
+      <p><em>And settled back down. For now.</em></p>
 
     </div>
   </div>
